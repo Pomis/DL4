@@ -3,6 +3,9 @@ import tensorflow as tf
 import read_inputs
 import numpy as N
 import matplotlib.pyplot as plt
+import time
+
+start = time.time()
 
 # read data from file
 data_input = read_inputs.load_data_mnist('MNIST_data/mnist.pkl.gz')
@@ -75,3 +78,8 @@ for optimizer in optimizers:
 
 
 plt.show()
+end = time.time()
+totalTime = end - start
+f = open(f'singlelayer_time{totalTime}.txt', 'w')
+f.write(f'this is the  time {totalTime}')
+f.close()

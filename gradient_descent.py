@@ -2,6 +2,9 @@
 import tensorflow as tf
 import sys
 import matplotlib.pyplot as plt
+import time
+
+start = time.time()
 
 # Model parameters
 W = tf.Variable([.3], dtype=tf.float32)
@@ -86,5 +89,10 @@ plt.ylabel('loss')
 plt.xlabel('iteration')
 plt.show()
 
+end = time.time()
+totalTime = end - start
+f = open(f'multilayer_time{totalTime}.txt', 'w')
+f.write(f'this is the  time {totalTime}')
+f.close()
 
 
