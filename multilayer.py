@@ -106,7 +106,7 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
     print("TRAINING")
-    batches = [10, 40, 100, 150]
+    batches = [150]
     for batch in batches:
         for epoch in range(5):
             print('Running epoch %d with batch %d' % (epoch, batch))
